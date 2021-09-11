@@ -1,311 +1,111 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
-
-# Site Settings
-locale                   : "en-US"
-title                    : "Your Name / Site Title"
-title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
-teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-breadcrumbs              : false # true, false (default)
-words_per_minute         : 160
-future                   : true
-read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false #change to true to add link to talkmap on talks page
-comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
-  disqus:
-    shortname            :
-  discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
-staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
-  transforms:
-    email                : "md5"
-  generatedFields:
-    date:
-      type               : "date"
-      options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
-atom_feed:
-  path                   : # blank (default) uses feed.xml
-
-# SEO Related
-google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
-
-# Social Sharing
-twitter:
-  username               : &twitter
-facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 :  # Open Graph/Twitter default site image
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
-social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
-
-
-# Analytics
-analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
-  google:
-    tracking_id          :
-
-
-# Site Author
-author:
-  name             : "Your Sidebar Name"
-  avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
-  employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "academicpages"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : "replacethistwitterhandle"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
-
-
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-  - files
-exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - CHANGELOG
-  - Capfile
-  - Gemfile
-  - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - config
-  - gulpfile.js
-  - log
-  - node_modules
-  - package.json
-  - tmp
-  - vendor
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-
-# Conversion
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-
-# Markdown Processing
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-
-# Collections
-collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
-  publications:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
-
-
-# Defaults
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
-permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-redirect-from
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-
-
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
-
-
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+ss://YWVzLTI1Ni1nY206eDIzWjRMR2tHRGtUaFo5S2F6NERVUlFwQDE1NC4xNi4xNjguMTg2OjQwMDkz#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eVVYYWQ3REdGOEw1Y1RTaEVwbnAyTjZ6QDE5NC4zOS4xMjcuMjM6MzY0NjA=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDE5NC4zOS4xMjcuMTkxOjM5Nzcy#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206d3JDYUd0clViemVScVFMZGM4S21rM05kQDUuMTg3LjQ5LjE0ODo0OTEyNg==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDE4NS4xMDguMTA2Ljc0OjQzODkz#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDE4NS4xNTMuMTUxLjgzOjM5Nzcy#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDE5NC4zOS4xMjcuMTYzOjQzODkz#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WktFc1hrRmJVWjJ6NjY3WUE4QTdjRURQQDQ1LjEzNC4yMjQuMjA6NDg5NzA=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eDIzWjRMR2tHRGtUaFo5S2F6NERVUlFwQDIxNy4xMzguMjA3LjI1Mzo0MDA5Mw==#%e6%b3%95%e5%9b%bd(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDUuMTU3LjEzLjUzOjQzODkz#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206c3V1Y1NlVkxtdDZQUUtBUDc3TnRHdzl4QDE0NC40OC4zOC4xODM6NDkzMzk=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206bjh3NFN0bmJWRDlkbVhZbjRBanQ4N0VBQDE4NS4xMDguMTA1LjU1OjMxNTcy#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206YVlOZUtETXpZUVl3NEtiVWJKQThXc3pxQDE5NC4zOS4xMjcuMTgxOjMxOTQ0#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206d0VzRmNIQ3ZiTDRlSmtMNERaUWE3UmdSQDE4NS4xMDguMTA2LjE0Njo0NTc0Ng==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ejZwSDNSeXR0a1JXaEo1dHBSeXQ2ZFlrQDM3LjEyMC4yMDcuMTE3OjQxNjc2#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDE4NS4yMTcuNzEuMjQ1OjQzODkz#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206OG42cHdBY3JydjJwajZ0RlkycDNUYlE2QDE4NS4xMDguMTA2LjEwNTozMzk5Mg==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eDIzWjRMR2tHRGtUaFo5S2F6NERVUlFwQDM3LjEyMC4yMjEuNTo0MDA5Mw==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ejZwSDNSeXR0a1JXaEo1dHBSeXQ2ZFlrQDIwNy4yNDQuNjcuMTQ5OjQxNjc2#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDM3LjEyMC4yMzUuNTk6NDM4OTM=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ZmFCQW9ENTRrODdVSkc3QDYyLjIxMC4yMDYuMjM2OjIzNzY=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206TGtGQXprelhrU0NSWWEyQ3NSZEw4Y0diQDQ1LjEyLjIyMy4xOTU6MzQ4MTU=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDgyLjEwMi4xNy4xODE6NDM4OTM=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDM3LjEyMC4yMzUuODM6NDM4OTM=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ekhLWVM5RGVBanZ2NDNFd2dEZnlFZzRkQDE4NS4yMTcuNzEuMjQ1OjQ0MTAy#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206NGVqSjhuNWRkTHVZRFVIR1hKcmUydWZKQDIxNy4xMzguMjE5LjIyOTo0ODkzOA==#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDIxNy4xMzguMjE5LjIyNzozOTc3Mg==#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ZnlYZHc4N3lDSDlTQW1Ga1B2c3ZMVnFDQDIwNy4yNDQuNjcuMTQ5OjQ0NzQ1#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206OG42cHdBY3JydjJwajZ0RlkycDNUYlE2QDE4NS4xNTMuMTUxLjk4OjMzOTky#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206d3JDYUd0clViemVScVFMZGM4S21rM05kQDE4NS4xMDguMTA2LjEwNTo0OTEyNg==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ZmFCQW9ENTRrODdVSkc3QDE4NS4yMTMuMjEuNzoyMzc2#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206a0Q5dmtqbkU2ZHNVendRZnZLa1BrUUFkQDQ1LjEyLjIyMy4xOTc6Mzc1ODg=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eVVYYWQ3REdGOEw1Y1RTaEVwbnAyTjZ6QDE5MS45Ni4xMy4yMDA6MzY0NjA=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206VnQ1cEJKRndkdE5CMjZjSmJUWHhtODhaQDgyLjEwMi4yNi42MDo0NzAyNw==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDg0LjI0Ny41MC42OTozOTc3Mg==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDIxNy4xMzguMjE5LjIyOTo0Mzg5Mw==#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206TGtGQXprelhrU0NSWWEyQ3NSZEw4Y0diQDIwMi4xNDMuMTEwLjMyOjM0ODE1#%e8%b6%8a%e5%8d%97(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHIXlCd1BXSDNWYW9AMTg1LjEyOC4yNC4zNDo4MDI=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Z3F0d0d1OWJWcmVKcUwzRlRIU1ZLR3p5QDkxLjIxOS4yMTUuNjk6NTA2OTU=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206OG42cHdBY3JydjJwajZ0RlkycDNUYlE2QDM3LjEyMC4yMDcuNTozMzk5Mg==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206QmRSV0MzOEw1SlVETVRZTk54SkdjVXdCQDE5NC4xMTAuMTE1Ljc3OjQ5Mzk2#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDE4NS4xNzQuMTU5LjEzNjo0Mzg5Mw==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eVVYYWQ3REdGOEw1Y1RTaEVwbnAyTjZ6QDE5NC40MS4xMTIuMjg6MzY0NjA=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206YjJqRFBIVVF4Q05hMkttR0haank3QzRCQDgyLjEwMi4yNi41NDo1MDAyNA==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206TGtGQXprelhrU0NSWWEyQ3NSZEw4Y0diQDgyLjEwMi4yNi41NDozNDgxNQ==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206QmRSV0MzOEw1SlVETVRZTk54SkdjVXdCQDkxLjIwNi4xNjguMjQ6NDkzOTY=#%e8%8d%b7%e5%85%b0(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206OG42cHdBY3JydjJwajZ0RlkycDNUYlE2QDEwMi4xNjUuMjMuMzg6MzM5OTI=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206QmRSV0MzOEw1SlVETVRZTk54SkdjVXdCQDkxLjIwNi4xNjguNTo0OTM5Ng==#%e8%8d%b7%e5%85%b0(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206c3V1Y1NlVkxtdDZQUUtBUDc3TnRHdzl4QDkxLjIwNi4xNjguMjQ6NDkzMzk=#%e8%8d%b7%e5%85%b0(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206YVlOZUtETXpZUVl3NEtiVWJKQThXc3pxQDIuNTguMjQxLjM6MzE5NDQ=#%e5%8f%b0%e6%b9%be(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ZmFCQW9ENTRrODdVSkc3QDExOC4xMDcuMjQ0LjExNDoyMzc1#%e9%a6%99%e6%b8%af(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206TGtGQXprelhrU0NSWWEyQ3NSZEw4Y0diQDkxLjIwNi4xNjguNjQ6MzQ4MTU=#%e8%8d%b7%e5%85%b0(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206REtYZld3YzRlYnNjcFhUS3BidDg1clNIQDg3LjIzOS4yNTUuMTE2OjM4NzQy#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHIXlCd1BXSDNWYW9AMTA5LjE2OS43Mi4yNDk6ODAx#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHIXlCd1BXSDNWYW9AMTA5LjE2OS43Mi4yNDk6ODA5#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDkxLjIwNi4xNjguNDE6Mzk3NzI=#%e8%8d%b7%e5%85%b0(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206V0N1ejd5cmZaU0NRUVhTTnJ0R1B6MkhUQDIuNTguMjQxLjU6NTAxNjg=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206QmRSV0MzOEw1SlVETVRZTk54SkdjVXdCQDE5NS4xODEuMTcxLjIzMzo0OTM5Ng==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206OG42cHdBY3JydjJwajZ0RlkycDNUYlE2QDkxLjIwNi4xNjguMTE6MzM5OTI=#%e8%8d%b7%e5%85%b0(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206TGtGQXprelhrU0NSWWEyQ3NSZEw4Y0diQDE2NS4yMzEuMjUzLjE0NzozNDgxNQ==#%e5%8d%b0%e5%ba%a6(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206c3V1Y1NlVkxtdDZQUUtBUDc3TnRHdzl4QDkxLjIwNi4xNjguMzo0OTMzOQ==#%e8%8d%b7%e5%85%b0(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpaM1lTMEt4Qjh1NWpncDczNmU4MzR5M0RhWHdTT1l6eGxGREZxcE5DYWFsREE5Q0VJUmNlWk9DQW5SMnlUU0AxOTMuMTEwLjIwMS4xNDc6MTgzMzU=#%e9%a6%99%e6%b8%af(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Tkh3UVRQTENmYVRNU3FUblUzbWpjU3hlQDkxLjkwLjEyMy4xMTU6MzM5OTg=#%e7%bd%97%e9%a9%ac(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Tkh3UVRQTENmYVRNU3FUblUzbWpjU3hlQDM3LjEyMC4yMTcuMTQ5OjMzOTk4#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eVVYYWQ3REdGOEw1Y1RTaEVwbnAyTjZ6QDE4MC4xNDkuMjMxLjY5OjM2NDYw#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206a0Q5dmtqbkU2ZHNVendRZnZLa1BrUUFkQDE4MC4xNDkuMjMxLjY3OjM3NTg4#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpaM1lTMEt4Qjh1NWpncDczNmU4MzR5M0RhWHdTT1l6eGxGREZxcE5DYWFsREE5Q0VJUmNlWk9DQW5SMnlUU0AxOTMuMTEwLjIwMy44NjoxODMzNg==#%e9%a6%99%e6%b8%af(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206QmRSV0MzOEw1SlVETVRZTk54SkdjVXdCQDIxNy4xMzguMjE2LjI0Mzo0OTM5Ng==#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Tkh3UVRQTENmYVRNU3FUblUzbWpjU3hlQDE5My4yOS4xMDYuMTE3OjMzOTk4#%e7%bd%97%e9%a9%ac(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1hTamdEN3U3QXI3R3hrWjRDZ1RNVXNqQDIxMi4xMDIuNTQuMTgxOjQ1MzI5#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206NGVqSjhuNWRkTHVZRFVIR1hKcmUydWZKQDE5My4yOS4xMDYuMTc5OjQ4OTM4#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDIuNTguMjQyLjQ1OjM5Nzcy#%e5%8f%b0%e6%b9%be(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206NGVqSjhuNWRkTHVZRFVIR1hKcmUydWZKQDIxNy4xMzguMjExLjIxOTo0ODkzOA==#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDg0LjE3LjU4LjE2NjozOTc3Mg==#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206S3F1djVVaHZaWE5NZW1BUXk4RHhaN3FuQDIuNTguMjQyLjQ1OjM4NjIw#%e5%8f%b0%e6%b9%be(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206YVlOZUtETXpZUVl3NEtiVWJKQThXc3pxQDIwMi4xNDMuMTEwLjMyOjMxOTQ0#%e8%b6%8a%e5%8d%97(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDE5My4yOS4xMDcuMTIzOjM5Nzcy#%e7%bd%97%e9%a9%ac(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WTlHY1RQZW1ITUtFa3JmR1FQSnFGRE5yQDIxMi4xMDIuNTQuMTgyOjQ5NjUz#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206UUNTdEt6WjU2U0hCYzR0TDdzdENFcXFkQDE4NS4xMDIuMjE5LjQ5OjQ0NzQy#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206YVlOZUtETXpZUVl3NEtiVWJKQThXc3pxQDE5My4yOS4xMDcuMTIzOjMxOTQ0#%e7%bd%97%e9%a9%ac(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206bjh3NFN0bmJWRDlkbVhZbjRBanQ4N0VBQDE5OC4xNDcuMjIuODc6MzE1NzI=#%e7%be%8e%e5%9b%bd(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206SjlZMm5jcmRQRUMzOGd3eWRORkZHQm5hQDEwMy4xMjAuNjYuMjE0OjM1Mjk0#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WTlHY1RQZW1ITUtFa3JmR1FQSnFGRE5yQDIuNTguMjQxLjU6NDk2NTM=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206OG42cHdBY3JydjJwajZ0RlkycDNUYlE2QDM3LjEyMC4yMTcuMTc5OjMzOTky#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206TGtGQXprelhrU0NSWWEyQ3NSZEw4Y0diQDEzOC4xOTkuMTkuMTg1OjM0ODE1#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WG1RU3hEQ241ZWhwY3E2REJZbXM4RkpmQDE0My4yNDQuNTcuOTk6NDE5OTI=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eDIzWjRMR2tHRGtUaFo5S2F6NERVUlFwQDE5My4yOS4xMDYuMTgxOjQwMDkz#%e7%bd%97%e9%a9%ac(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ejZwSDNSeXR0a1JXaEo1dHBSeXQ2ZFlrQDEwNC4yMDAuMTMxLjE2Nzo0MTY3Ng==#%e7%be%8e%e5%9b%bd(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDE5My4yOS4xMDYuNTo0Mzg5Mw==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WWd1c0gyTVdBOFBXYzNwMlZEc1I3QVZ2QDE3Ni4xMjUuMjMxLjU6MzE3NjQ=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDE5My4yOS4xMDYuMjk6Mzk3NzI=#%e7%bd%97%e9%a9%ac(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206OG42cHdBY3JydjJwajZ0RlkycDNUYlE2QDE3Ni4xMjUuMjMxLjM6MzM5OTI=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eDIzWjRMR2tHRGtUaFo5S2F6NERVUlFwQDE4NS4xNTMuMTUwLjU0OjQwMDkz#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHIXlCd1BXSDNWYW9AODkuMjM4LjE2NS4yMjY6ODA5#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eDIzWjRMR2tHRGtUaFo5S2F6NERVUlFwQDEzNy41OS41Mi4xMDc6NDAwOTM=#%e5%8d%b0%e5%ba%a6(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206a0Q5dmtqbkU2ZHNVendRZnZLa1BrUUFkQDE5NS40Ny4xOTQuNjQ6Mzc1ODg=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ZW5jdGRLeUpmU3U3NlZxem5Ld1R0NkFwQDUuMTU0LjE3NC4xODk6Mzc0NzM=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206YjJqRFBIVVF4Q05hMkttR0haank3QzRCQDE5Mi4xMTEuMTM0LjE5NTo1MDAyNA==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206c3V1Y1NlVkxtdDZQUUtBUDc3TnRHdzl4QDg5LjIzOC4xMzAuMjI3OjQ5MzM5#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDg0LjM5LjExMi4zNTo0Mzg5Mw==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206NGVqSjhuNWRkTHVZRFVIR1hKcmUydWZKQDE5NC4zNy45Ni4yMTM6NDg5Mzg=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDE4NS4xODguNjEuMTE5OjQzODkz#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDIxNy4xMzguMjIwLjEzMTo0Mzg5Mw==#%e6%84%8f%e5%a4%a7%e5%88%a9(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Tkh3UVRQTENmYVRNU3FUblUzbWpjU3hlQDE4NS4xNjYuODQuODc6MzM5OTg=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206TGtGQXprelhrU0NSWWEyQ3NSZEw4Y0diQDE1Mi44OS4xNjAuNjE6MzQ4MTU=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206eDIzWjRMR2tHRGtUaFo5S2F6NERVUlFwQDE4NS4xNjYuODQuMTk6NDAwOTM=#%e6%b3%95%e5%9b%bd(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206c3V1Y1NlVkxtdDZQUUtBUDc3TnRHdzl4QDE4NS4yMTIuMTExLjY6NDkzMzk=#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206WXlDQmVEZFlYNGNhZEhwQ2trbWRKTHE4QDE4NS4xODguNjEuMTIzOjQzODkz#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQDE3OC4yNTUuNDUuMTg3OjM5Nzcy#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206ZmFCQW9ENTRrODdVSkc3QDg5LjE2My4yMTIuNzU6MjM3NQ==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
+ss://YWVzLTI1Ni1nY206S3F1djVVaHZaWE5NZW1BUXk4RHhaN3FuQDUuMTg3LjQ5LjE0NzozODYyMA==#%e6%ac%a7%e6%b4%b2(%e6%ac%a2%e8%bf%8e%e8%ae%a2%e9%98%85Youtube%e7%a0%b4%e8%a7%a3%e8%b5%84%e6%ba%90%e5%90%9b)
